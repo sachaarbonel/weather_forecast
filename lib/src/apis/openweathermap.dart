@@ -1,15 +1,15 @@
 import 'package:http/http.dart' as http;
 import 'package:weather_forecast/weather_forecast.dart';
-
+import 'package:meta/meta.dart';
 abstract class WeatherApi {
-  Future getWeather({String city});
+  Future getWeather({@required String city});
 }
 
 class OpenWeatherMapApi extends WeatherApi {
   final http.Client httpClient;
   final String appId;
 
-  OpenWeatherMapApi({this.httpClient, this.appId})
+  OpenWeatherMapApi({@required this.httpClient,@required this.appId})
       : assert(httpClient != null, "httpClient should'nt be null"),
         assert(appId != null, "appId should'nt be null");
 
@@ -17,7 +17,7 @@ class OpenWeatherMapApi extends WeatherApi {
   /// final api = OpenWeatherMapApi(httpClient : http.Client(), appId: "a457e758ed0d9ab3fcc40xxxe")
   /// await getWeather(city: "Budapest");
   @override
-  Future<WeatherResponse> getWeather({String city}) async {
+  Future<WeatherResponse> getWeather({@required String city}) async {
     var params = {
       'q': "$city",
       'appid': "$appId",
