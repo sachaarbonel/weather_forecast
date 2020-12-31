@@ -149,18 +149,18 @@ class Main extends Equatable {
 
   double temp;
   double feelsLike;
-  int tempMin;
-  int tempMax;
-  int pressure;
-  int humidity;
+  double tempMin;
+  double tempMax;
+  double pressure;
+  double humidity;
 
   factory Main.fromJson(Map<String, dynamic> json) => Main(
         temp: json["temp"].toDouble(),
         feelsLike: json["feels_like"].toDouble(),
-        tempMin: json["temp_min"],
-        tempMax: json["temp_max"],
-        pressure: json["pressure"],
-        humidity: json["humidity"],
+        tempMin: json["temp_min"].toDouble(),
+        tempMax: json["temp_max"].toDouble(),
+        pressure: json["pressure"].toDouble(),
+        humidity: json["humidity"].toDouble(),
       );
 
   Map<String, dynamic> toJson() => {
