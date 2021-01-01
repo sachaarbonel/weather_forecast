@@ -1,6 +1,6 @@
 import 'package:weather_forecast/weather_forecast.dart';
 
-getMockWeatherData() => WeatherResponse(
+WeatherResponse getMockWeatherData() => WeatherResponse(
     coord: Coord(lon: 19.04, lat: 47.5),
     weather: <Weather>[
       Weather(

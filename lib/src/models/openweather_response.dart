@@ -5,6 +5,7 @@
 import 'dart:convert';
 
 import 'package:equatable/equatable.dart';
+import 'package:weather_forecast/src/models/display_weather.dart';
 
 WeatherResponse weatherResponseFromJson(String str) =>
     WeatherResponse.fromJson(json.decode(str));
@@ -12,7 +13,26 @@ WeatherResponse weatherResponseFromJson(String str) =>
 String weatherResponseToJson(WeatherResponse data) =>
     json.encode(data.toJson());
 
-class WeatherResponse extends Equatable {
+WeatherCondition getWeatherCondition(String condition) => {
+      "Clouds": WeatherCondition.clouds,
+      "Clear": WeatherCondition.clear,
+      "Tornado": WeatherCondition.tornado,
+      "Squall": WeatherCondition.squall,
+      "Ash": WeatherCondition.ash,
+      "Dust": WeatherCondition.dust,
+      "Sand": WeatherCondition.sand,
+      "Fog": WeatherCondition.fog,
+      // "dustWhirls": WeatherCondition.dustWhirls,
+      "Haze": WeatherCondition.haze,
+      "Smoke": WeatherCondition.smoke,
+      "Mist": WeatherCondition.mist,
+      "Snow": WeatherCondition.snow,
+      "Rain": WeatherCondition.rain,
+      "Drizzle": WeatherCondition.drizzle,
+      "Thunderstorm": WeatherCondition.thunderstorm,
+    }[condition];
+
+class WeatherResponse extends DisplayWeather {
   WeatherResponse({
     this.coord,
     this.weather,
@@ -27,7 +47,9 @@ class WeatherResponse extends Equatable {
     this.id,
     this.name,
     this.cod,
-  });
+  }) : super(
+            temp: main.temp,
+            weatherCondition: getWeatherCondition(weather.first.main));
 
   Coord coord;
   List<Weather> weather;
@@ -78,21 +100,7 @@ class WeatherResponse extends Equatable {
       };
 
   @override
-  List<Object> get props => [
-        coord,
-        weather,
-        base,
-        main,
-        visibility,
-        wind,
-        clouds,
-        dt,
-        sys,
-        timezone,
-        id,
-        name,
-        cod,
-      ];
+  List<Object> get props => [temp, weatherCondition];
 }
 
 class Clouds extends Equatable {
