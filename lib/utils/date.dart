@@ -1,5 +1,5 @@
 //TODO: move this to utils and test it
-  import 'package:intl/intl.dart';
+import 'package:intl/intl.dart';
 
 String formatHourMinute(int timestamp) {
     final hourMinuteFormat = DateFormat(DateFormat.HOUR_MINUTE);

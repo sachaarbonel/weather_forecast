@@ -16,9 +16,8 @@ class WeatherForecastSDK extends StatelessWidget {
       @required String apiKey,
       this.onWeatherLoading})
       : super(key: key) {
-    _weatherRepository = repository != null
-        ? _weatherRepository
-        : OpenWeatherMapApi(
+    _weatherRepository = repository ??
+        OpenWeatherMapApi(
             appId: apiKey,
             httpClient: http
                 .Client()); //you can wether use our OpenweatherApi implementation or implement your own
@@ -37,6 +36,8 @@ class _WeatherInfosBuilder extends StatelessWidget {
   _WeatherInfosBuilder({this.onWeatherLoading});
   @override
   Widget build(BuildContext context) {
+    BlocProvider.of<WeatherBloc>(context)
+        .add(WeatherRequested(city: "Budapest"));
     return BlocBuilder<WeatherBloc, WeatherState>(builder: (context, state) {
       if (state is WeatherInitial) {
         return Center(child: Text('Please Select a Location'));
@@ -46,11 +47,11 @@ class _WeatherInfosBuilder extends StatelessWidget {
       }
       if (state is WeatherLoadSuccess) {
         final weather = state.weather;
-        return onWeatherLoading != null
-            ? onWeatherLoading(state)
-            : WeatherInfos(
+        return onWeatherLoading == null
+            ? WeatherInfos(
                 displayWeather: weather,
-              );
+              )
+            : onWeatherLoading(state);
       }
       if (state is WeatherLoadFailure) {
         return Text(
@@ -94,7 +95,7 @@ class WeatherInfos extends StatelessWidget {
                     SizedBox(
                       width: 5,
                     ),
-                    Icon(Icons.wb_cloudy),
+                    Icon(Icons.wb_cloudy), //TODO: replace with proper assets
                   ],
                 )
               ],
@@ -102,7 +103,9 @@ class WeatherInfos extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text("Precipitation: ${displayWeather.pop * 100}%"),
+                displayWeather.pop != null
+                    ? Text("Precipitation: ${displayWeather.pop * 100}%")
+                    : Container(),
                 Text("Humidity: ${displayWeather.humidity}%"),
                 Text("Wind: ${displayWeather.windSpeed} km/h")
               ],
@@ -112,5 +115,4 @@ class WeatherInfos extends StatelessWidget {
       ],
     );
   }
-
 }

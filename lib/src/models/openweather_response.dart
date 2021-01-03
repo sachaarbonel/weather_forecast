@@ -49,7 +49,14 @@ class WeatherResponse extends DisplayWeather {
     this.cod,
   }) : super(
             temp: main.temp,
-            weatherCondition: getWeatherCondition(weather.first.main));
+            weatherCondition: getWeatherCondition(weather.first.main),
+
+            // pop : main.,
+            humidity: main.humidity,
+            description: weather.first.description,
+            timeStamp: dt,
+            city: name,
+            windSpeed: wind.speed);
 
   Coord coord;
   List<Weather> weather;

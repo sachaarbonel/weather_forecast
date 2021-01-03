@@ -33,7 +33,7 @@ class DisplayWeatherImpl extends DisplayWeather {
       {double temp,
       WeatherCondition weatherCondition,
       double pop,
-      int humidity,
+      double humidity,
       String description,
       String city,
       int timeStamp,

@@ -4,7 +4,7 @@ abstract class DisplayWeather extends Equatable {
   final double temp;
   final double windSpeed;
   final WeatherCondition weatherCondition;
-  final int humidity;
+  final double humidity;
   final String description;
   final String city;
   final double pop;
