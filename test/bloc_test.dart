@@ -37,6 +37,8 @@ main() async {
     });
   });
 
+
+  //Todo test failure
   group('MockWeatherBloc', () {
     final mockOpenWeatherMapApi = MockOpenWeatherMapApi();
     when(mockOpenWeatherMapApi.getWeather(city: 'Budapest'))

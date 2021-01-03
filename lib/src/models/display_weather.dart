@@ -2,9 +2,23 @@ import 'package:equatable/equatable.dart';
 
 abstract class DisplayWeather extends Equatable {
   final double temp;
+  final double windSpeed;
   final WeatherCondition weatherCondition;
+  final int humidity;
+  final String description;
+  final String city;
+  final double pop;
+  final int timeStamp;
 
-  DisplayWeather({this.temp, this.weatherCondition});
+  DisplayWeather(
+      {this.temp,
+      this.weatherCondition,
+      this.pop,
+      this.humidity,
+      this.description,
+      this.timeStamp,
+      this.city,
+      this.windSpeed});
 }
 
 enum WeatherCondition {
