@@ -37,7 +37,6 @@ main() async {
     });
   });
 
-
   //Todo test failure
   group('MockWeatherBloc', () {
     final mockOpenWeatherMapApi = MockOpenWeatherMapApi();
@@ -51,6 +50,18 @@ main() async {
         WeatherLoadInProgress(),
         WeatherLoadSuccess(weather: getMockWeatherData())
       ],
+    );
+  });
+
+  group('MockWeatherBloc exception', () {
+    final mockOpenWeatherMapApi = MockOpenWeatherMapApi();
+    when(mockOpenWeatherMapApi.getWeather(city: 'Budapest'))
+        .thenThrow(Exception);
+    blocTest<WeatherBloc, WeatherState>(
+      'emits WeatherLoadInProgress WeatherLoadSuccess',
+      build: () => WeatherBloc(weatherRepository: mockOpenWeatherMapApi),
+      act: (bloc) async => bloc.add(WeatherRequested(city: "Budapest")),
+      expect: <WeatherState>[WeatherLoadInProgress(), WeatherLoadFailure()],
     );
   });
 }
