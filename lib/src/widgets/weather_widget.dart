@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:weather_forecast/src/bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_forecast/src/models/display_weather.dart';
 import 'package:weather_forecast/src/services/openweathermap.dart';
 import 'package:http/http.dart' as http;
+import 'package:weather_forecast/utils/date.dart';
 
 class WeatherForecastSDK extends StatelessWidget {
   WeatherRepository _weatherRepository;
@@ -112,15 +112,5 @@ class WeatherInfos extends StatelessWidget {
       ],
     );
   }
-//TODO: move this to utils and test it
-  String formatHourMinute(int timestamp) {
-    final hourMinuteFormat = DateFormat(DateFormat.HOUR_MINUTE);
-    return hourMinuteFormat
-        .format(DateTime.fromMillisecondsSinceEpoch(timestamp));
-  }
 
-  String formatWeekDay(int timestamp) {
-    final weekDayFormat = DateFormat(DateFormat.WEEKDAY);
-    return weekDayFormat.format(DateTime.fromMillisecondsSinceEpoch(timestamp));
-  }
 }
