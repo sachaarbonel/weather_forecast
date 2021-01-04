@@ -24,7 +24,7 @@ jobs:
         java-version: '12.x'
     - uses: subosito/flutter-action@v1
       with:
-        flutter-version: '1.26.0-2.0.pre.143'
+        flutter-version: '1.26.0-2.0.pre'
         channel: 'master'
     - run: flutter pub get
     - name: Test & Generate coverage report
