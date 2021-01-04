@@ -23,7 +23,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('hey'),
+        title: Text('Simple forecast app'),
       ),
       body: Center(
         child: WeatherForecastSDK(

@@ -37,9 +37,6 @@ class OpenWeatherMapApi extends WeatherRepository {
         assert(cache != null, "cache should'nt be null"),
         super(httpClient: httpClient, apiKey: appId, cache: cache);
 
-  /// Usage:
-  /// final api = OpenWeatherMapApi(httpClient : http.Client(), appId: "a457e758ed0d9ab3fcc40xxxe")
-  /// await api.getWeather(city: "Budapest");
   @override
   Future<DisplayWeather> getWeather(
       {@required LatLon coordinates, @required int day}) async {
