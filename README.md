@@ -1,5 +1,11 @@
 A library for Dart developers.
 
+
+<p align="center">
+  <a href="https://codecov.io/gh/sachaarbonel/weather_forecast"><img alt="Coverage" src="https://codecov.io/gh/sachaarbonel/weather_forecast/branch/master/graph/badge.svg?token=3PGFHEBDYM"></a>
+  <a href="https://github.com/Asso-x-Asso/asso_carree/actions?query=workflow%3Aflutter-tests"><img alt="Flutter tests status" src="https://github.com/sachaarbonel/weather_forecast/workflows/flutter-tests/badge.svg"></a>
+</p>
+
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
 
