@@ -18,7 +18,8 @@ class WeatherForecastSDK extends StatelessWidget {
       @required String apiKey,
       this.coordinates,
       this.onWeatherLoading})
-      : super(key: key) {
+      : assert(apiKey != null, "apiKey can't be null"),
+        super(key: key) {
     _weatherRepository = repository ??
         OpenWeatherMapApi(
             appId: apiKey,
