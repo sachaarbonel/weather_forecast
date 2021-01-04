@@ -61,7 +61,6 @@ WeatherForecastSDK(
               //do somethong with temperature and weather condition
           }
           apiKey: '4e9c407e5962db67073767a4be34a68f',
-          onWeatherLoading()
 )
 ```
 
