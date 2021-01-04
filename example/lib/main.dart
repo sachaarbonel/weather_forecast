@@ -32,6 +32,7 @@ class MyHomePage extends StatelessWidget {
             lat: 47.5,
             lon: 19.04,
           ),
+          
           apiKey: '4e9c407e5962db67073767a4be34a68f',
         ),
       ),

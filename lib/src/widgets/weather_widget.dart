@@ -8,6 +8,20 @@ import 'package:weather_forecast/src/services/openweathermap.dart';
 import 'package:http/http.dart' as http;
 import 'package:weather_forecast/weather_forecast.dart';
 
+
+///to get weather forecast for next monday at those geocoodirnates
+/// simply use it like this
+/// 
+/// ```dart
+///  WeatherForecastSDK(
+///            day : DateTime.monday,
+///           coordinates: LatLon(
+///             lat: 47.5,
+///             lon: 19.04,
+///           ),
+///           apiKey: '4e9c407e5962db67073767a4be34a68f',
+/// )
+/// ```
 class WeatherForecastSDK extends StatelessWidget {
   WeatherRepository _weatherRepository;
   final Widget Function(WeatherLoadSuccess) onWeatherLoading;
