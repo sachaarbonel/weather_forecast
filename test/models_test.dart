@@ -12,5 +12,8 @@ void main() {
     final weather = weatherResponseFromJson(await file.readAsString());
 
     expect(weather, equals(getMockWeatherData()));
+    final current = weather.getDaily(DateTime.monday);
+    expect(current.dewPoint, 277.01);
+    // print(current.toJson());
   });
 }

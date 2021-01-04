@@ -42,10 +42,12 @@ class WeatherResponse extends DisplayWeather {
     this.hourly,
     this.daily,
   }) : super(
-          temp: current.temp,
-          weatherCondition: getWeatherCondition(current.weather.first.main),
-          coordinates: LatLon(lat:lat,lon:lon,)
-        );
+            temp: current.temp,
+            weatherCondition: getWeatherCondition(current.weather.first.main),
+            coordinates: LatLon(
+              lat: lat,
+              lon: lon,
+            ));
 
   double lat;
   double lon;
@@ -88,7 +90,10 @@ class WeatherResponse extends DisplayWeather {
       };
 
   @override
-  List<Object> get props => [temp,weatherCondition];
+  List<Object> get props => [temp, weatherCondition];
+
+Daily getDaily(int day) => daily.firstWhere((element) =>
+      DateTime.fromMillisecondsSinceEpoch(element.dt).weekday == day);
 }
 
 class Current {
