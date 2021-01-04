@@ -1,5 +1,3 @@
-
-
 import 'dart:collection';
 
 import 'package:quiver/time.dart';
@@ -24,13 +22,14 @@ class WeatherForecastCache {
   }
 
   /// ```dart
-  /// if (contains.contains(latLon) && !cache.has_expired(latLon)){
+  /// DisplayWeather weather;
+  /// if (cache.contains.contains(latLon) && !cache.has_expired(latLon)){
   /// weather = cache.get(latLon);
   /// } else {
-  /// weather = getWeather(city:"Budapest");
+  /// weather = getWeather(coordinates:latLon);
   /// cache.set(latLon,weather);
   /// }
-// ```
+  /// ```
   bool has_expired(LatLon term, [Clock clock]) {
     final ttl_duration = Duration(seconds: ttl);
     final now = clock?.now() ?? DateTime.now();
