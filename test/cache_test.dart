@@ -3,6 +3,7 @@ import 'dart:collection';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:quiver/time.dart';
+import 'package:weather_forecast/src/models/coordinates.dart';
 import 'package:weather_forecast/weather_forecast.dart';
 import 'package:quiver/testing/src/async/fake_async.dart';
 
@@ -17,38 +18,17 @@ class DisplayWeatherImpl extends DisplayWeather {
       int timeStamp,
       double windSpeed})
       : super(
-            temp: temp,
-            weatherCondition: weatherCondition,
-            pop: pop,
-            humidity: humidity,
-            windSpeed: windSpeed,
-            timeStamp: timeStamp,
-            city: city,
-            description: description);
+          temp: temp,
+          weatherCondition: weatherCondition,
+        );
 
   @override
   List<Object> get props => [
         temp,
         weatherCondition,
-        pop,
-        humidity,
-        windSpeed,
-        timeStamp,
-        city,
-        description
       ];
 }
 
-class LatLon extends Equatable {
-  final double lat;
-  final double lon;
-  final DateTime lastFetch;
-
-  LatLon({this.lat, this.lon, this.lastFetch});
-
-  @override
-  List<Object> get props => [lat, lon];
-}
 
 class WeatherForecastCache {
   final _cache = HashMap<LatLon, DisplayWeather>();
@@ -67,13 +47,13 @@ class WeatherForecastCache {
     return _cache[term];
   }
 
-/// ```dart 
-/// if (contains.contains(latLon) && !cache.has_expired(latLon)){
-/// weather = cache.get(latLon);
-/// } else {
-/// weather = getWeather(city:"Budapest");
-/// cache.set(latLon,weather);
-/// }
+  /// ```dart
+  /// if (contains.contains(latLon) && !cache.has_expired(latLon)){
+  /// weather = cache.get(latLon);
+  /// } else {
+  /// weather = getWeather(city:"Budapest");
+  /// cache.set(latLon,weather);
+  /// }
 // ```
   bool has_expired(LatLon term, [Clock clock]) {
     final ttl_duration = Duration(seconds: ttl);

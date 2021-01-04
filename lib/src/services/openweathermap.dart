@@ -1,4 +1,5 @@
 import 'package:http/http.dart' as http;
+import 'package:weather_forecast/src/models/coordinates.dart';
 import 'package:weather_forecast/src/models/display_weather.dart';
 import 'package:weather_forecast/weather_forecast.dart';
 import 'package:meta/meta.dart';
@@ -8,7 +9,7 @@ abstract class WeatherRepository {
   final String apiKey;
 
   WeatherRepository({this.httpClient, this.apiKey});
-  Future<DisplayWeather> getWeather({@required String city});
+  Future<DisplayWeather> getWeather({@required LatLon coordinates});
 }
 
 class OpenWeatherMapApi extends WeatherRepository {
@@ -23,18 +24,19 @@ class OpenWeatherMapApi extends WeatherRepository {
   /// final api = OpenWeatherMapApi(httpClient : http.Client(), appId: "a457e758ed0d9ab3fcc40xxxe")
   /// await api.getWeather(city: "Budapest");
   @override
-  Future<DisplayWeather> getWeather({@required String city}) async {
+  Future<DisplayWeather> getWeather({@required LatLon coordinates}) async {
     var params = {
-      'q': "$city",
-      'appid': "$apiKey",
+      'lat': '${coordinates.lat}',
+      'lon': '${coordinates.lon}',
+      'appid': '$apiKey',
       'units': 'metric',
+      'exclude': 'minutely,alerts',
     };
     var query = params.entries.map((p) => '${p.key}=${p.value}').join('&');
 
-    var res = await http.get('$baseUrl/weather?$query');
+    var res = await http.get('$baseUrl/onecall?$query');
     if (res.statusCode != 200)
-      throw Exception(
-          'http.get error: statusCode= ${res.statusCode}');
+      throw Exception('http.get error: statusCode= ${res.statusCode}');
 
     return weatherResponseFromJson(res.body);
   }

@@ -28,8 +28,12 @@ class MyHomePage extends StatelessWidget {
       body: Center(
         //TODO refresh
         //TODO: add date parameter and location
-        //TODO: change 
+        //TODO: change
         child: WeatherForecastSDK(
+          coordinates: LatLon(
+            lat: 47.5,
+            lon: 19.04,
+          ),
           apiKey: "4e9c407e5962db67073767a4be34a68f",
         ),
       ),

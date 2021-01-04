@@ -9,44 +9,21 @@ main() {
             textDirection: TextDirection.ltr,
             child: WeatherInfos(
               displayWeather: DisplayWeatherImpl(
-                  description: "Partly Cloudly",
-                  temp: 3.04,
-                  pop: 0.03,
-                  humidity: 88,
-                  timeStamp: 1610100000,
-                  city: "Budapest",
-                  windSpeed: 3.01),
+                  temp: 3.04, weatherCondition: WeatherCondition.clear),
             ))));
-    expect(find.text("Budapest", skipOffstage: false), findsOneWidget);
-    expect(find.text("Partly Cloudly", skipOffstage: false), findsOneWidget);
-    expect(find.text("Monday", skipOffstage: false), findsOneWidget);
-    expect(find.text("11:15 AM", skipOffstage: false), findsOneWidget);
-    expect(
-        find.text("Precipitation: 3.0%", skipOffstage: false), findsOneWidget);
-    expect(find.text("Humidity: 88%", skipOffstage: false), findsOneWidget);
-    expect(find.text("Wind: 3.01 km/h", skipOffstage: false), findsOneWidget);
+
+    expect(find.text("3.04°C", skipOffstage: false), findsOneWidget);
   });
 }
 
 class DisplayWeatherImpl extends DisplayWeather {
-  DisplayWeatherImpl(
-      {double temp,
-      WeatherCondition weatherCondition,
-      double pop,
-      double humidity,
-      String description,
-      String city,
-      int timeStamp,
-      double windSpeed})
-      : super(
-            temp: temp,
-            weatherCondition: weatherCondition,
-            pop: pop,
-            humidity: humidity,
-            windSpeed: windSpeed,
-            timeStamp: timeStamp,
-            city: city,
-            description: description);
+  DisplayWeatherImpl({
+    double temp,
+    WeatherCondition weatherCondition,
+  }) : super(
+          temp: temp,
+          weatherCondition: weatherCondition,
+        );
 
   @override
   List<Object> get props => [temp, weatherCondition];

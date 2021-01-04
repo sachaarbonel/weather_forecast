@@ -4,6 +4,7 @@ import 'package:test/test.dart';
 import 'package:weather_forecast/src/bloc/weather_bloc.dart';
 import 'package:weather_forecast/src/bloc/weather_events.dart';
 import 'package:weather_forecast/src/bloc/weather_state.dart';
+import 'package:weather_forecast/src/models/coordinates.dart';
 
 import 'mock_data.dart';
 import 'mocks.dart';
@@ -40,12 +41,19 @@ main() async {
   //Todo test failure
   group('MockWeatherBloc', () {
     final mockOpenWeatherMapApi = MockOpenWeatherMapApi();
-    when(mockOpenWeatherMapApi.getWeather(city: 'Budapest'))
-        .thenAnswer((_) => Future.value(getMockWeatherData()));
+    when(mockOpenWeatherMapApi.getWeather(
+        coordinates: LatLon(
+      lat: 47.5,
+      lon: 19.04,
+    ))).thenAnswer((_) => Future.value(getMockWeatherData()));
     blocTest<WeatherBloc, WeatherState>(
       'emits WeatherLoadInProgress WeatherLoadSuccess',
       build: () => WeatherBloc(weatherRepository: mockOpenWeatherMapApi),
-      act: (bloc) async => bloc.add(WeatherRequested(city: "Budapest")),
+      act: (bloc) async => bloc.add(WeatherRequested(
+          coordinates: LatLon(
+        lat: 47.5,
+        lon: 19.04,
+      ))),
       expect: <WeatherState>[
         WeatherLoadInProgress(),
         WeatherLoadSuccess(weather: getMockWeatherData())
@@ -55,12 +63,19 @@ main() async {
 
   group('MockWeatherBloc exception', () {
     final mockOpenWeatherMapApi = MockOpenWeatherMapApi();
-    when(mockOpenWeatherMapApi.getWeather(city: 'Budapest'))
-        .thenThrow(Exception);
+    when(mockOpenWeatherMapApi.getWeather(
+        coordinates: LatLon(
+      lat: 47.5,
+      lon: 19.04,
+    ))).thenThrow(Exception);
     blocTest<WeatherBloc, WeatherState>(
       'emits WeatherLoadInProgress WeatherLoadSuccess',
       build: () => WeatherBloc(weatherRepository: mockOpenWeatherMapApi),
-      act: (bloc) async => bloc.add(WeatherRequested(city: "Budapest")),
+      act: (bloc) async => bloc.add(WeatherRequested(
+          coordinates: LatLon(
+        lat: 47.5,
+        lon: 19.04,
+      ))),
       expect: <WeatherState>[WeatherLoadInProgress(), WeatherLoadFailure()],
     );
   });
