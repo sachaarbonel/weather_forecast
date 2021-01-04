@@ -4,6 +4,7 @@
 
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:weather_forecast/src/models/coordinates.dart';
 import 'package:weather_forecast/src/models/display_weather.dart';
 
@@ -13,23 +14,102 @@ WeatherResponse weatherResponseFromJson(String str) =>
 String weatherResponseToJson(WeatherResponse data) =>
     json.encode(data.toJson());
 
-WeatherCondition getWeatherCondition(String condition) => {
-      'Clouds': WeatherCondition.clouds,
-      'Clear': WeatherCondition.clear,
-      'Tornado': WeatherCondition.tornado,
-      'Squall': WeatherCondition.squall,
-      'Ash': WeatherCondition.ash,
-      'Dust': WeatherCondition.dust,
-      'Sand': WeatherCondition.sand,
-      'Fog': WeatherCondition.fog,
+Image conditionToImage(WeatherCondition condition) => {
+      WeatherCondition.clouds: Image.asset('assets/020-clouds.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover),
+      WeatherCondition.clear: Image.asset('assets/sun.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover),
+      WeatherCondition.tornado: Image.asset('assets/036-tornado.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover),
+      WeatherCondition.squall: Image.asset('assets/032-windy.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover),
+      WeatherCondition.ash: Image.asset('assets/volcano.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover),
+      WeatherCondition.dust: Image.asset('assets/dust.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //dust.png
+      WeatherCondition.sand: Image.asset('assets/sand.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //sand.png
+      WeatherCondition.fog: Image.asset('assets/foggy(1).png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //foggy(1).png
       // 'dustWhirls': WeatherCondition.dustWhirls,
-      'Haze': WeatherCondition.haze,
-      'Smoke': WeatherCondition.smoke,
-      'Mist': WeatherCondition.mist,
-      'Snow': WeatherCondition.snow,
-      'Rain': WeatherCondition.rain,
-      'Drizzle': WeatherCondition.drizzle,
-      'Thunderstorm': WeatherCondition.thunderstorm,
+      WeatherCondition.haze: Image.asset('assets/haze.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //haze.png
+      WeatherCondition.smoke: Image.asset('assets/co2.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //co2.p,g
+      WeatherCondition.mist: Image.asset('assets/foggy.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //foggy.png
+      WeatherCondition.snow: Image.asset('assets/033-snow.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //033-snow.png
+      WeatherCondition.rain: Image.asset('assets/002-rain.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //002-rain.png
+      WeatherCondition.drizzle: Image.asset('assets/cloudy.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //cloudy.png
+      WeatherCondition.thunderstorm: Image.asset('assets/005-thunderstorm.png',
+          package: 'weather_forecast',
+          height: 150,
+          width: 150,
+          fit: BoxFit.cover), //005-thunderstorm.png
+    }[condition];
+
+WeatherCondition getWeatherCondition(String condition) => {
+      'Clouds': WeatherCondition.clouds, //020-clouds.png
+      'Clear': WeatherCondition.clear, //sun.png
+      'Tornado': WeatherCondition.tornado, //036-tornado.png
+      'Squall': WeatherCondition.squall, //032-windy.png
+      'Ash': WeatherCondition.ash, //volcano.png
+      'Dust': WeatherCondition.dust, //dust.png
+      'Sand': WeatherCondition.sand, //sand.png
+      'Fog': WeatherCondition.fog, //foggy(1).png
+      // 'dustWhirls': WeatherCondition.dustWhirls,
+      'Haze': WeatherCondition.haze, //haze.png
+      'Smoke': WeatherCondition.smoke, //co2.p,g
+      'Mist': WeatherCondition.mist, //foggy.png
+      'Snow': WeatherCondition.snow, //033-snow.png
+      'Rain': WeatherCondition.rain, //002-rain.png
+      'Drizzle': WeatherCondition.drizzle, //cloudy.png
+      'Thunderstorm': WeatherCondition.thunderstorm, //005-thunderstorm.png
     }[condition];
 
 class WeatherResponse extends DisplayWeather {
@@ -92,7 +172,7 @@ class WeatherResponse extends DisplayWeather {
   @override
   List<Object> get props => [temp, weatherCondition];
 
-Daily getDaily(int day) => daily.firstWhere((element) =>
+  Daily getDaily(int day) => daily.firstWhere((element) =>
       DateTime.fromMillisecondsSinceEpoch(element.dt).weekday == day);
 }
 

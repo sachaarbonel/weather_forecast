@@ -6,6 +6,7 @@ import 'package:weather_forecast/src/models/display_weather.dart';
 import 'package:weather_forecast/src/services/cache.dart';
 import 'package:weather_forecast/src/services/openweathermap.dart';
 import 'package:http/http.dart' as http;
+import 'package:weather_forecast/weather_forecast.dart';
 
 class WeatherForecastSDK extends StatelessWidget {
   WeatherRepository _weatherRepository;
@@ -91,7 +92,7 @@ class WeatherInfos extends StatelessWidget {
         SizedBox(
           width: 5,
         ),
-        Icon(Icons.wb_cloudy),
+        conditionToImage(displayWeather.weatherCondition),
       ],
     );
   }
