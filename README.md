@@ -9,6 +9,10 @@ A library for Dart developers.
 Created from templates made available by Stagehand under a BSD-style
 [license](https://github.com/dart-lang/stagehand/blob/master/LICENSE).
 
+## Prerequisites:
+
+- Get an api key at : openweathermap (it's free)
+
 ## Usage
 
 A simple usage example:
