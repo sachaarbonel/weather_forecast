@@ -5,16 +5,10 @@ import 'package:weather_forecast/weather_forecast.dart';
 import 'package:quiver/testing/src/async/fake_async.dart';
 
 class DisplayWeatherImpl extends DisplayWeather {
-  DisplayWeatherImpl(
-      {double temp,
-      WeatherCondition weatherCondition,
-      double pop,
-      double humidity,
-      String description,
-      String city,
-      int timeStamp,
-      double windSpeed})
-      : super(
+  DisplayWeatherImpl({
+    double temp,
+    WeatherCondition weatherCondition,
+  }) : super(
           temp: temp,
           weatherCondition: weatherCondition,
         );
@@ -32,13 +26,7 @@ void main() {
 
   setUp(() {
     weather = DisplayWeatherImpl(
-        description: 'Partly Cloudly',
-        temp: 3.04,
-        pop: 0.03,
-        humidity: 88,
-        timeStamp: 1610100000,
-        city: 'Budapest',
-        windSpeed: 3.01);
+        temp: 3.04, weatherCondition: WeatherCondition.clear);
 
     lastFetch = DateTime(2021, DateTime.january, DateTime.sunday, 18, 30, 5);
   });
