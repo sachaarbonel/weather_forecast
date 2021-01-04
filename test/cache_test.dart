@@ -26,18 +26,18 @@ class DisplayWeatherImpl extends DisplayWeather {
       ];
 }
 
-main() {
+void main() {
   DisplayWeather weather;
   DateTime lastFetch;
 
   setUp(() {
     weather = DisplayWeatherImpl(
-        description: "Partly Cloudly",
+        description: 'Partly Cloudly',
         temp: 3.04,
         pop: 0.03,
         humidity: 88,
         timeStamp: 1610100000,
-        city: "Budapest",
+        city: 'Budapest',
         windSpeed: 3.01);
 
     lastFetch = DateTime(2021, DateTime.january, DateTime.sunday, 18, 30, 5);

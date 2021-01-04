@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:weather_forecast/weather_forecast.dart';
 
-main() {
+void main() {
   testWidgets('test WeatherInfos', (WidgetTester tester) async {
     await tester.pumpWidget(Material(
         child: Directionality(
@@ -12,7 +12,7 @@ main() {
                   temp: 3.04, weatherCondition: WeatherCondition.clear),
             ))));
 
-    expect(find.text("3.04°C", skipOffstage: false), findsOneWidget);
+    expect(find.text('3.04°C', skipOffstage: false), findsOneWidget);
   });
 }
 

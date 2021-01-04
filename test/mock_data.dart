@@ -3,7 +3,7 @@ import 'package:weather_forecast/weather_forecast.dart';
 WeatherResponse getMockWeatherData() => WeatherResponse(
       lat: 47.5,
       lon: 19.04,
-      timezone: "Europe/Budapest",
+      timezone: 'Europe/Budapest',
       timezoneOffset: 3600,
       current: Current(
         dt: 1609719692,
@@ -20,7 +20,7 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
         windSpeed: 2.6,
         windDeg: 70,
         weather: <Weather>[
-          Weather(id: 701, main: "Mist", description: "mist", icon: "50n")
+          Weather(id: 701, main: 'Mist', description: 'mist', icon: '50n')
         ]
       ),
       hourly: <Current>[
@@ -39,9 +39,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 803,
-              main: "Clouds",
-              description: "broken clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'broken clouds',
+              icon: '04n'
             )
           ],
           pop: 0
@@ -61,9 +61,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 803,
-              main: "Clouds",
-              description: "broken clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'broken clouds',
+              icon: '04n'
             )
           ],
           pop: 0.09
@@ -83,9 +83,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 803,
-              main: "Clouds",
-              description: "broken clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'broken clouds',
+              icon: '04n'
             )
           ],
           pop: 0.05
@@ -105,9 +105,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 803,
-              main: "Clouds",
-              description: "broken clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'broken clouds',
+              icon: '04n'
             )
           ],
           pop: 0.05
@@ -127,9 +127,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.01
@@ -149,9 +149,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0
@@ -171,9 +171,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0
@@ -193,9 +193,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -215,9 +215,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -237,9 +237,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -259,9 +259,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -281,9 +281,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -303,9 +303,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -325,9 +325,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -347,9 +347,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -369,9 +369,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -391,9 +391,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.01
@@ -413,9 +413,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.05
@@ -435,9 +435,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.05
@@ -457,9 +457,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.13
@@ -479,9 +479,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.17
@@ -501,9 +501,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.29
@@ -523,9 +523,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.29
@@ -545,9 +545,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.26
@@ -567,9 +567,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.22
@@ -589,9 +589,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.19
@@ -611,9 +611,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0.31
@@ -633,9 +633,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 500,
-              main: "Rain",
-              description: "light rain",
-              icon: "10n"
+              main: 'Rain',
+              description: 'light rain',
+              icon: '10n'
             )
           ],
           pop: 0.43,
@@ -656,9 +656,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 500,
-              main: "Rain",
-              description: "light rain",
-              icon: "10n"
+              main: 'Rain',
+              description: 'light rain',
+              icon: '10n'
             )
           ],
           pop: 0.51,
@@ -679,9 +679,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 500,
-              main: "Rain",
-              description: "light rain",
-              icon: "10n"
+              main: 'Rain',
+              description: 'light rain',
+              icon: '10n'
             )
           ],
           pop: 0.51,
@@ -702,9 +702,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 500,
-              main: "Rain",
-              description: "light rain",
-              icon: "10n"
+              main: 'Rain',
+              description: 'light rain',
+              icon: '10n'
             )
           ],
           pop: 0.51,
@@ -725,9 +725,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 500,
-              main: "Rain",
-              description: "light rain",
-              icon: "10d"
+              main: 'Rain',
+              description: 'light rain',
+              icon: '10d'
             )
           ],
           pop: 0.33,
@@ -748,9 +748,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0.25
@@ -770,9 +770,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0.21
@@ -792,9 +792,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0.21
@@ -814,9 +814,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0.13
@@ -836,9 +836,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0.13
@@ -858,9 +858,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -880,9 +880,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -902,9 +902,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           pop: 0
@@ -924,9 +924,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0
@@ -946,9 +946,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0
@@ -968,9 +968,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04n"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04n'
             )
           ],
           pop: 0
@@ -990,9 +990,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 800,
-              main: "Clear",
-              description: "clear sky",
-              icon: "01n"
+              main: 'Clear',
+              description: 'clear sky',
+              icon: '01n'
             )
           ],
           pop: 0
@@ -1012,9 +1012,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 800,
-              main: "Clear",
-              description: "clear sky",
-              icon: "01n"
+              main: 'Clear',
+              description: 'clear sky',
+              icon: '01n'
             )
           ],
           pop: 0
@@ -1034,9 +1034,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 800,
-              main: "Clear",
-              description: "clear sky",
-              icon: "01n"
+              main: 'Clear',
+              description: 'clear sky',
+              icon: '01n'
             )
           ],
           pop: 0
@@ -1056,9 +1056,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 800,
-              main: "Clear",
-              description: "clear sky",
-              icon: "01n"
+              main: 'Clear',
+              description: 'clear sky',
+              icon: '01n'
             )
           ],
           pop: 0
@@ -1078,9 +1078,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 800,
-              main: "Clear",
-              description: "clear sky",
-              icon: "01n"
+              main: 'Clear',
+              description: 'clear sky',
+              icon: '01n'
             )
           ],
           pop: 0
@@ -1113,9 +1113,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 804,
-              main: "Clouds",
-              description: "overcast clouds",
-              icon: "04d"
+              main: 'Clouds',
+              description: 'overcast clouds',
+              icon: '04d'
             )
           ],
           clouds: 99,
@@ -1148,9 +1148,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 500,
-              main: "Rain",
-              description: "light rain",
-              icon: "10d"
+              main: 'Rain',
+              description: 'light rain',
+              icon: '10d'
             )
           ],
           clouds: 100,
@@ -1184,9 +1184,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 500,
-              main: "Rain",
-              description: "light rain",
-              icon: "10d"
+              main: 'Rain',
+              description: 'light rain',
+              icon: '10d'
             )
           ],
           clouds: 100,
@@ -1220,9 +1220,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 500,
-              main: "Rain",
-              description: "light rain",
-              icon: "10d"
+              main: 'Rain',
+              description: 'light rain',
+              icon: '10d'
             )
           ],
           clouds: 86,
@@ -1256,9 +1256,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 600,
-              main: "Snow",
-              description: "light snow",
-              icon: "13d"
+              main: 'Snow',
+              description: 'light snow',
+              icon: '13d'
             )
           ],
           clouds: 100,
@@ -1292,9 +1292,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 616,
-              main: "Snow",
-              description: "rain and snow",
-              icon: "13d"
+              main: 'Snow',
+              description: 'rain and snow',
+              icon: '13d'
             )
           ],
           clouds: 100,
@@ -1329,9 +1329,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 501,
-              main: "Rain",
-              description: "moderate rain",
-              icon: "10d"
+              main: 'Rain',
+              description: 'moderate rain',
+              icon: '10d'
             )
           ],
           clouds: 100,
@@ -1365,9 +1365,9 @@ WeatherResponse getMockWeatherData() => WeatherResponse(
           weather: <Weather>[
             Weather(
               id: 600,
-              main: "Snow",
-              description: "light snow",
-              icon: "13d"
+              main: 'Snow',
+              description: 'light snow',
+              icon: '13d'
             )
           ],
           clouds: 100,

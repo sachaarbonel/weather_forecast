@@ -26,7 +26,7 @@ abstract class WeatherRepository {
 }
 
 class OpenWeatherMapApi extends WeatherRepository {
-  final String baseUrl = "https://api.openweathermap.org/data/2.5";
+  final String baseUrl = 'https://api.openweathermap.org/data/2.5';
 
   OpenWeatherMapApi(
       {@required http.Client httpClient,
@@ -52,8 +52,9 @@ class OpenWeatherMapApi extends WeatherRepository {
     var query = params.entries.map((p) => '${p.key}=${p.value}').join('&');
 
     var res = await http.get('$baseUrl/onecall?$query');
-    if (res.statusCode != 200)
+    if (res.statusCode != 200) {
       throw Exception('http.get error: statusCode= ${res.statusCode}');
+    }
 
     return weatherResponseFromJson(res.body);
   }

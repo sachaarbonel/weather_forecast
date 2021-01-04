@@ -1,16 +1,13 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
-import 'package:weather_forecast/src/bloc/weather_bloc.dart';
-import 'package:weather_forecast/src/bloc/weather_events.dart';
-import 'package:weather_forecast/src/bloc/weather_state.dart';
+import 'package:weather_forecast/src/bloc/bloc.dart';
 import 'package:weather_forecast/src/models/coordinates.dart';
-import 'package:weather_forecast/src/services/openweathermap.dart';
 
 import 'mock_data.dart';
 import 'mocks.dart';
 
-main() async {
+void main() async {
   group('whenListen', () {
     test("Let's mock the MockWeatherBloc's stream!", () {
       // Create Mock MockWeatherBloc Instance

@@ -78,7 +78,7 @@ class WeatherInfos extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text("${displayWeather.temp}°C"),
+        Text('${displayWeather.temp}°C'),
         SizedBox(
           width: 5,
         ),
