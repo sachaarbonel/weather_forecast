@@ -11,14 +11,14 @@ abstract class WeatherRepository {
   final WeatherForecastCache cache;
 
   WeatherRepository({this.httpClient, this.cache, this.apiKey});
-  Future<DisplayWeather> getWeather({@required LatLon coordinates});
+  Future<DisplayWeather> getWeather({@required LatLon coordinates,@required int day});
   Future<DisplayWeather> getWeatherOrCache(
-      {@required LatLon coordinates}) async {
+      {@required LatLon coordinates,@required int day}) async {
     DisplayWeather weather;
     if (cache.contains(coordinates) && !cache.has_expired(coordinates)) {
       weather = cache.get(coordinates);
     } else {
-      weather = await getWeather(coordinates: coordinates);
+      weather = await getWeather(coordinates: coordinates, day :day);
       cache.set(coordinates, weather);
     }
     return weather;
@@ -41,7 +41,8 @@ class OpenWeatherMapApi extends WeatherRepository {
   /// final api = OpenWeatherMapApi(httpClient : http.Client(), appId: "a457e758ed0d9ab3fcc40xxxe")
   /// await api.getWeather(city: "Budapest");
   @override
-  Future<DisplayWeather> getWeather({@required LatLon coordinates}) async {
+  Future<DisplayWeather> getWeather(
+      {@required LatLon coordinates, @required int day}) async {
     var params = {
       'lat': '${coordinates.lat}',
       'lon': '${coordinates.lon}',
@@ -56,6 +57,11 @@ class OpenWeatherMapApi extends WeatherRepository {
       throw Exception('http.get error: statusCode= ${res.statusCode}');
     }
 
-    return weatherResponseFromJson(res.body);
+    final weather = weatherResponseFromJson(res.body);
+    final daily = weather.getDaily(day);
+    return DisplayWeatherImpl(
+        coordinates: LatLon(lat: weather.lat, lon: weather.lon),
+        temp: daily.temp.day,
+        weatherCondition: getWeatherCondition(daily.weather.first.main));
   }
 }

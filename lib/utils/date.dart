@@ -15,6 +15,6 @@ String formatWeekDay(int timestamp) {
 bool checkScope(DateTime other, [Clock clock]) {
   final now = clock?.now() ?? DateTime.now();
   final isInScope = other.difference(now).inDays < Duration(days: 8).inDays;
-  print(now.difference(other));
+  // print(now.difference(other));
   return isInScope;
 }

@@ -11,14 +11,18 @@ class WeatherForecastSDK extends StatelessWidget {
   WeatherRepository _weatherRepository;
   final Widget Function(WeatherLoadSuccess) onWeatherLoading;
   final LatLon coordinates;
+  final int day;
 
   WeatherForecastSDK(
       {Key key,
       WeatherRepository repository,
       @required String apiKey,
-      this.coordinates,
-      this.onWeatherLoading})
+      @required this.coordinates,
+      this.onWeatherLoading,
+      @required this.day})
       : assert(apiKey != null, "apiKey can't be null"),
+        assert(coordinates != null, "coordinates can't be null"),
+        assert(day != null, "day can't be null"),
         super(key: key) {
     _weatherRepository = repository ??
         OpenWeatherMapApi(
@@ -32,19 +36,23 @@ class WeatherForecastSDK extends StatelessWidget {
     return BlocProvider(
       create: (context) => WeatherBloc(weatherRepository: _weatherRepository),
       child: _WeatherInfosBuilder(
-          onWeatherLoading: onWeatherLoading, coordinates: coordinates),
+          onWeatherLoading: onWeatherLoading,
+          coordinates: coordinates,
+          day: day),
     );
   }
 }
 
 class _WeatherInfosBuilder extends StatelessWidget {
   final Widget Function(WeatherState) onWeatherLoading;
+  final int day;
   final LatLon coordinates;
-  _WeatherInfosBuilder({this.onWeatherLoading, this.coordinates});
+  _WeatherInfosBuilder(
+      {this.onWeatherLoading, @required this.coordinates, @required this.day});
   @override
   Widget build(BuildContext context) {
     BlocProvider.of<WeatherBloc>(context)
-        .add(WeatherRequested(coordinates: coordinates));
+        .add(WeatherRequested(coordinates: coordinates, day: day));
     return BlocBuilder<WeatherBloc, WeatherState>(builder: (context, state) {
       if (state is WeatherInitial) {
         return Center(child: Text('Please Select a Location'));

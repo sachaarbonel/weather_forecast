@@ -8,9 +8,14 @@ abstract class WeatherEvent extends Equatable {
 
 class WeatherRequested extends WeatherEvent {
   final LatLon coordinates;
+  final int day;
 
-  const WeatherRequested({@required this.coordinates}) : assert(coordinates != null);
+  const WeatherRequested({
+    @required this.coordinates,
+    @required this.day,
+  })  : assert(coordinates != null, "coordinates can't be null"),
+        assert(day != null, "day can't be null");
 
   @override
-  List<Object> get props => [coordinates];
+  List<Object> get props => [coordinates,day];
 }

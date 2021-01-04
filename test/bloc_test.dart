@@ -39,36 +39,38 @@ void main() async {
   group('MockWeatherBloc', () {
     final mockOpenWeatherMapApi = MockOpenWeatherMapApi();
     when(mockOpenWeatherMapApi.getWeatherOrCache(
+        day: DateTime.monday,
         coordinates: LatLon(
-      lat: 47.5,
-      lon: 19.04,
-    ))).thenAnswer((_) => Future.value(getMockWeatherData()));
+          lat: 47.5,
+          lon: 19.04,
+        ))).thenAnswer((_) => Future.value(getMockWeatherData()));
     blocTest<WeatherBloc, WeatherState>(
       'emits WeatherLoadInProgress WeatherLoadSuccess',
       build: () => WeatherBloc(weatherRepository: mockOpenWeatherMapApi),
       skip: 1,
       act: (bloc) async => bloc.add(WeatherRequested(
+          day: DateTime.monday,
           coordinates: LatLon(
-        lat: 47.5,
-        lon: 19.04,
-      ))),
-      expect: <WeatherState>[
-        WeatherLoadSuccess(weather: getMockWeatherData())
-      ],
+            lat: 47.5,
+            lon: 19.04,
+          ))),
+      expect: <WeatherState>[WeatherLoadSuccess(weather: getMockWeatherData())],
     );
   });
 
   group('MockWeatherBloc exception', () {
     final mockOpenWeatherMapApi = MockOpenWeatherMapApi();
-    when(mockOpenWeatherMapApi.getWeather(
+    when(mockOpenWeatherMapApi.getWeatherOrCache(
+        day: DateTime.monday,
         coordinates: LatLon(
-      lat: 47.5,
-      lon: 19.04,
-    ))).thenThrow(Exception);
+          lat: 47.5,
+          lon: 19.04,
+        ))).thenThrow(Exception);
     blocTest<WeatherBloc, WeatherState>(
       'emits WeatherLoadFailure',
       build: () => WeatherBloc(weatherRepository: mockOpenWeatherMapApi),
       act: (bloc) async => bloc.add(WeatherRequested(
+        day: DateTime.monday,
           coordinates: LatLon(
         lat: 47.5,
         lon: 19.04,

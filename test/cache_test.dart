@@ -4,22 +4,6 @@ import 'package:weather_forecast/src/services/cache.dart';
 import 'package:weather_forecast/weather_forecast.dart';
 import 'package:quiver/testing/src/async/fake_async.dart';
 
-class DisplayWeatherImpl extends DisplayWeather {
-  DisplayWeatherImpl({
-    double temp,
-    WeatherCondition weatherCondition,
-  }) : super(
-          temp: temp,
-          weatherCondition: weatherCondition,
-        );
-
-  @override
-  List<Object> get props => [
-        temp,
-        weatherCondition,
-      ];
-}
-
 void main() {
   DisplayWeather weather;
   DateTime lastFetch;

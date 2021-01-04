@@ -27,6 +27,7 @@ class MyHomePage extends StatelessWidget {
       ),
       body: Center(
         child: WeatherForecastSDK(
+          day : DateTime.monday,
           coordinates: LatLon(
             lat: 47.5,
             lon: 19.04,
