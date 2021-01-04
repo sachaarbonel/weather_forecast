@@ -5,6 +5,7 @@ import 'package:weather_forecast/src/bloc/weather_bloc.dart';
 import 'package:weather_forecast/src/bloc/weather_events.dart';
 import 'package:weather_forecast/src/bloc/weather_state.dart';
 import 'package:weather_forecast/src/models/coordinates.dart';
+import 'package:weather_forecast/src/services/openweathermap.dart';
 
 import 'mock_data.dart';
 import 'mocks.dart';
@@ -38,10 +39,9 @@ main() async {
     });
   });
 
-  //Todo test failure
   group('MockWeatherBloc', () {
     final mockOpenWeatherMapApi = MockOpenWeatherMapApi();
-    when(mockOpenWeatherMapApi.getWeather(
+    when(mockOpenWeatherMapApi.getWeatherOrCache(
         coordinates: LatLon(
       lat: 47.5,
       lon: 19.04,
@@ -49,13 +49,13 @@ main() async {
     blocTest<WeatherBloc, WeatherState>(
       'emits WeatherLoadInProgress WeatherLoadSuccess',
       build: () => WeatherBloc(weatherRepository: mockOpenWeatherMapApi),
+      skip: 1,
       act: (bloc) async => bloc.add(WeatherRequested(
           coordinates: LatLon(
         lat: 47.5,
         lon: 19.04,
       ))),
       expect: <WeatherState>[
-        WeatherLoadInProgress(),
         WeatherLoadSuccess(weather: getMockWeatherData())
       ],
     );
@@ -69,7 +69,7 @@ main() async {
       lon: 19.04,
     ))).thenThrow(Exception);
     blocTest<WeatherBloc, WeatherState>(
-      'emits WeatherLoadInProgress WeatherLoadSuccess',
+      'emits WeatherLoadFailure',
       build: () => WeatherBloc(weatherRepository: mockOpenWeatherMapApi),
       act: (bloc) async => bloc.add(WeatherRequested(
           coordinates: LatLon(

@@ -3,6 +3,7 @@ import 'package:weather_forecast/src/bloc/bloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_forecast/src/models/coordinates.dart';
 import 'package:weather_forecast/src/models/display_weather.dart';
+import 'package:weather_forecast/src/services/cache.dart';
 import 'package:weather_forecast/src/services/openweathermap.dart';
 import 'package:http/http.dart' as http;
 
@@ -21,6 +22,7 @@ class WeatherForecastSDK extends StatelessWidget {
     _weatherRepository = repository ??
         OpenWeatherMapApi(
             appId: apiKey,
+            cache: WeatherForecastCache(),
             httpClient: http
                 .Client()); //you can wether use our OpenweatherApi implementation or implement your own
   }

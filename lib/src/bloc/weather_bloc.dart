@@ -16,8 +16,9 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
   Stream<WeatherState> mapEventToState(WeatherEvent event) async* {
     if (event is WeatherRequested) {
       yield WeatherLoadInProgress();
+      final coordinates = event.coordinates;
       try {
-        final weather = await weatherRepository.getWeather(coordinates: event.coordinates);
+        final weather =await weatherRepository.getWeatherOrCache(coordinates:coordinates);
 
         yield WeatherLoadSuccess(weather: weather);
       } catch (_) {
