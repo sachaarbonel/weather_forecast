@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:weather_forecast/weather_forecast.dart';
+import 'package:network_image_mock/network_image_mock.dart';
 
 void main() {
   testWidgets('test WeatherInfos', (WidgetTester tester) async {
-    await tester.pumpWidget(Material(
-        child: Directionality(
-            textDirection: TextDirection.ltr,
-            child: WeatherInfos(
-              displayWeather: DisplayWeatherImpl(
-                  temp: 3.04, weatherCondition: WeatherCondition.clear),
-            ))));
+    mockNetworkImagesFor(() async {
+      await tester.pumpWidget(Material(
+          child: Directionality(
+              textDirection: TextDirection.ltr,
+              child: WeatherInfos(
+                displayWeather: DisplayWeatherImpl(
+                    temp: 3.04, weatherCondition: WeatherCondition.clear),
+              ))));
 
-    expect(find.text('3.04°C', skipOffstage: false), findsOneWidget);
+      expect(find.text('3.04°C', skipOffstage: false), findsOneWidget);
+    });
   });
 }
 

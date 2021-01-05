@@ -51,7 +51,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
 
   assets:
-    - packages/weather_forecast/020-clouds.png
+    - packages/weather_forecast/assets/020-clouds.png
     - packages/weather_forecast/assets/sun.png
     - packages/weather_forecast/assets/036-tornado.png
     - packages/weather_forecast/assets/032-windy.png

@@ -21,5 +21,32 @@ dev_dependencies:
   test: ^1.14.4
   bloc_test: ^7.1.0
   mockito: ^4.1.3
+  network_image_mock: ^1.1.0
   flutter_test:
     sdk: flutter
+
+flutter:
+
+  # The following line ensures that the Material Icons font is
+  # included with your application, so that you can use the icons in
+  # the material Icons class.
+  uses-material-design: true
+
+  # To add assets to your application, add an assets section, like this:
+
+  assets:
+    - packages/weather_forecast/assets/020-clouds.png
+    - packages/weather_forecast/assets/sun.png
+    - packages/weather_forecast/assets/036-tornado.png
+    - packages/weather_forecast/assets/032-windy.png
+    - packages/weather_forecast/assets/volcano.png
+    - packages/weather_forecast/assets/dust.png
+    - packages/weather_forecast/assets/sand.png
+    - packages/weather_forecast/assets/foggy(1).png
+    - packages/weather_forecast/assets/haze.png
+    - packages/weather_forecast/assets/co2.png
+    - packages/weather_forecast/assets/foggy.png
+    - packages/weather_forecast/assets/033-snow.png
+    - packages/weather_forecast/assets/002-rain.png
+    - packages/weather_forecast/assets/cloudy.png
+    - packages/weather_forecast/assets/005-thunderstorm.png
